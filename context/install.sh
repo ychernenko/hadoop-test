@@ -2,7 +2,9 @@
 
 set -e
 
-ENV_CONFIG=~/.bashrc
+GLOBALS_HOME=/etc/profile.d
+JAVA_ENV=$GLOBALS_HOME/java.sh
+HADOOP_ENV=$GLOBALS_HOME/hadoop.sh
 
 yum -y install which tar openssh-server openssh-clients
 
@@ -31,8 +33,8 @@ JAVA_HOME=$JAVA_DIR/$(ls $JAVA_DIR)
 echo "
 export JAVA_HOME=$JAVA_HOME
 export PATH=\$PATH:$JAVA_HOME/bin
-" >> $ENV_CONFIG
-source $ENV_CONFIG
+" > $JAVA_ENV
+source $JAVA_ENV
 
 echo 'Java installed'
 
@@ -47,9 +49,8 @@ HADOOP_HOME=$HADOOP_DIR/$(ls $HADOOP_DIR)
 echo "
 export HADOOP_HOME=$HADOOP_HOME
 export PATH=\$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-export HADOOP_OPTS=-Djava.net.preferIPv4Stack=true
-" >> $ENV_CONFIG
-source $ENV_CONFIG
+" > $HADOOP_ENV
+source $HADOOP_ENV
 
 echo 'Hadoop installed'
 
