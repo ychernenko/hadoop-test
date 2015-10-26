@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./globals.sh
+source globals.sh
 
 cd context
 

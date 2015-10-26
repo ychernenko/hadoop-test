@@ -6,3 +6,6 @@
 /out/
 
 *.tar.gz
+
+# Maven
+target

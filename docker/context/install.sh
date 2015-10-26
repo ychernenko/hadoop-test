@@ -55,7 +55,7 @@ source $HADOOP_ENV
 echo 'Hadoop installed'
 
 echo 'Copying configs'
-cp -rfv etc $HADOOP_HOME
+cp -rfv hadoop-home/* $HADOOP_HOME
 
 hdfs namenode -format
 
