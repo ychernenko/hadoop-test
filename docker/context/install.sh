@@ -27,7 +27,7 @@ echo 'Installing Java ...'
 
 JAVA_DIR=/opt/java
 mkdir $JAVA_DIR
-tar xzf jdk-*.tar.gz -C $JAVA_DIR
+tar --no-same-owner -xzf jdk-*.tar.gz -C $JAVA_DIR
 JAVA_HOME=$JAVA_DIR/$(ls $JAVA_DIR)
 
 echo "
@@ -43,7 +43,7 @@ echo 'Installing Hadoop ...'
 
 HADOOP_DIR=/opt/hadoop
 mkdir $HADOOP_DIR
-tar xzf hadoop-*.tar.gz -C $HADOOP_DIR
+tar --no-same-owner -xzf hadoop-*.tar.gz -C $HADOOP_DIR
 HADOOP_HOME=$HADOOP_DIR/$(ls $HADOOP_DIR)
 
 echo "

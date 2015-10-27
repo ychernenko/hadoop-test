@@ -9,5 +9,5 @@ docker run \
         -h haddop-test \
         --name=hadoop-test \
         $IMAGE_NAME \
-        bash -i -c 'start-hadoop-test.sh && tail -F $HADOOP_HOME/logs/hadoop-$(whoami)-namenode-$(hostname).log'
+        bash -i -c 'start-hadoop-services.sh && tail -F $HADOOP_HOME/logs/hadoop-$(whoami)-namenode-$(hostname).log'
 
