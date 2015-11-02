@@ -22,6 +22,11 @@
             <outputDirectory>/</outputDirectory>
             <filtered>true</filtered>
         </fileSet>
+        <fileSet>
+            <directory>src/main/flume</directory>
+            <outputDirectory>volume</outputDirectory>
+            <filtered>true</filtered>
+        </fileSet>
     </fileSets>
 
 </assembly>

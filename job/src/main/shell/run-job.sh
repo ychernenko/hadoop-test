@@ -8,8 +8,8 @@ docker run \
         -v $(pwd)/volume:/volume \
         $IMAGE_NAME \
         bash -i -c 'start-hadoop-services.sh &&
-                    hadoop fs -put $HADOOP_HOME/README.txt / &&
-                    hadoop jar /volume/${project.build.finalName}.jar ychernenko.hadoop.test.WordCount /README.txt /output &&
+                    { flume-ng agent -n test -f /volume/test-flume-conf.properties & } &&
+                    hadoop jar /volume/${project.build.finalName}.jar ychernenko.hadoop.test.WordCount /input/FlumeData* /output &&
                     hadoop fs -cat /output/*'
 
 docker logs -f hadoop-test

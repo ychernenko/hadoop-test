@@ -60,7 +60,7 @@ FLUME_HOME=$FLUME_DIR/$(ls $FLUME_DIR)
 
 { source <(tee $GLOBALS_HOME/flume.sh); } << EOF
 export FLUME_HOME=$FLUME_HOME
-export PATH=\$PATH:$FLUME_HOME/bin:$FLUME_HOME/sbin
+export PATH=\$PATH:$FLUME_HOME/bin
 EOF
 
 echo 'Flume installed'
